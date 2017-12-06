@@ -1,0 +1,43 @@
+<h1>Login page</h1>
+<nav>
+    <a routerLink="/home" routerLinkActive="active">Go to home</a>
+</nav>
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <div>
+            <h1>
+                like ng-model example
+            </h1>
+        </div>
+        <div class="container-fluid">
+            <div class="form-group">
+                <input type="text"  [value]="username" (input)="username = $event.target.value" class="form-control" placeholder="username" />
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" [value]="password" (input)="password = $event.target.value" placeholder="password"/>
+            </div>
+            <input type="button" class="btn btn-success" (click)="submit()" value="sign in" />
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <div>
+                <h1>
+                    Ref example
+                </h1>
+            </div>
+            <div class="container-fluid">
+                <div class="form-group">
+                    <input type="text"  #user class="form-control" placeholder="username" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" #pass placeholder="password"/>
+                </div>
+                <input type="button" class="btn btn-success" (click)="submitWithRef(user.value,pass.value)" value="sign in" />
+            </div>
+        </div>
+    
+    </div>
